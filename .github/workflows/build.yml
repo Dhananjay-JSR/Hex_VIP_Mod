@@ -16,7 +16,7 @@ on:
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
   # This workflow contains a single job called "build"
-  build:
+  Compiling_Source_Mod:
     # The type of runner that the job will run on
     runs-on: ubuntu-latest
 
@@ -30,7 +30,54 @@ jobs:
         run: ls
 
       # Runs a set of commands using the runners shell
+      
       - name: Run a multi-line script
         run: |
-          echo Add other actions to build,
-          echo test, and deploy your project.
+          echo "Create clean plugins folder",
+          mkdir -p build/addons/sourcemod/scripting/include,
+          mkdir -p build/addons/sourcemod/plugins,
+          mkdir -p build/addons/sourcemod/translations.
+      - name: Moving translations
+        run: mv addons/sourcemod/translations/* build/addons/sourcemod/translations/
+        
+      - name: Download SourceMod
+        run: |
+            echo "Download und extract sourcemod",
+            wget "http://www.sourcemod.net/latest.php?version=1.8&os=linux" -O sourcemod.tar.gz.
+            
+      - name: Setup Plugins Version and start compiling 
+        run: |
+          echo "Set plugins version",
+          for file in addons/sourcemod/scripting/hexvips.sp,
+          do,
+          sed -i "s/<TAG>/$TAG/g" $file > output.txt,
+          rm output.txt,
+          done,
+          addons/sourcemod/scripting/compile.sh hexvips.sp.
+          
+      - name: Move plugins files to their folder
+        run: |
+         echo "Move plugins files to their folder",
+          mv addons/sourcemod/scripting/include/hexvips.inc build/addons/sourcemod/scripting/include,
+          mv addons/sourcemod/scripting/hexvips.sp build/addons/sourcemod/scripting,
+          mv addons/sourcemod/scripting/vipmenu.sp build/addons/sourcemod/scripting,
+          mv addons/sourcemod/scripting/compiled/hexvips.smx build/addons/sourcemod/plugins.
+          
+      - name: Moving License and Compresssing License 
+        run: |
+         mv LICENSE build/,
+         cd build/ && zip -9rq HexVips.zip addons/ LICENSE && mv HexVips.zip ../.
+       
+      - name: Show Content
+        run: |
+           ls build/addons/sourcemod/translations,
+            ls build/addons/sourcemod.
+            
+      - name: Build Done
+        run: echo "Build done"
+       
+       
+         
+     
+      
+      

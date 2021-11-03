@@ -60,13 +60,13 @@ jobs:
           
       - name: Moving License and Compresssing License 
         run: |
-         mv LICENSE build/,
+         mv LICENSE build/
          cd build/ && zip -9rq HexVips.zip addons/ LICENSE && mv HexVips.zip ../.
        
       - name: Show Content
         run: |
-           ls build/addons/sourcemod/translations,
-            ls build/addons/sourcemod.
+           ls build/addons/sourcemod/translations
+            ls build/addons/sourcemod
             
       - name: Build Done
         run: echo "Build done"

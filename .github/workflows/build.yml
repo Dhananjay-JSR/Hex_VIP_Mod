@@ -25,7 +25,7 @@ jobs:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v2
 
-      # Runs a single command using the runners shell
+      # DEBUG
       - name: Check Folder Content
         run: ls
 
@@ -39,6 +39,13 @@ jobs:
     
       - name: Check Folder Content once again
         run: ls
+        
+
+      # DEBUG
+      - name: Check Folder Content
+        run: | 
+          cd build/addons/sourcemod/,
+          ls.
           
       - name: Moving translations
         run: |

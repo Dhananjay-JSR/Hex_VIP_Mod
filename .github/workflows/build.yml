@@ -42,7 +42,7 @@ jobs:
           
       - name: Moving translations
         run: |
-          mv addons/sourcemod/translations/* build/addons/sourcemod/translations/.
+          mv addons/sourcemod/translations/* build/addons/sourcemod/translations/
         
       - name: Download SourceMod
         run: |

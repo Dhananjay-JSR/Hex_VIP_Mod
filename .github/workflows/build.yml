@@ -44,7 +44,8 @@ jobs:
       # DEBUG
       - name: Check Folder Content
         run: | 
-          cd build/addons/sourcemod/,
+          ls,
+          cd build,
           ls.
           
       - name: Moving translations

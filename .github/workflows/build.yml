@@ -65,12 +65,9 @@ jobs:
        
       - name: Show Content
         run: |
-           ls build/addons/sourcemod/translations
-            ls build/addons/sourcemod
             ls
-            echo "outside of CD"
-            cd ..
-            ls
+            echo pwd
+
             
       - name: Build Done
         run: echo "Build done"

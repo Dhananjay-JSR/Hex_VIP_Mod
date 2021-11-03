@@ -24,30 +24,12 @@ jobs:
     steps:
       #  1) Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v2
-
-      # 2) DEBUG
-      - name: Check Folder Content
-        run: ls
-
-      # 3 )Runs a set of commands using the runners shell
       
       - name: Create clean plugins folder
         run: |
           mkdir -p build/addons/sourcemod/scripting/include
           mkdir -p build/addons/sourcemod/plugins
           mkdir -p build/addons/sourcemod/translations
-    
-      - name: Check Folder Content once again
-        run: ls
-        
-
-      # 4 ) DEBUG
-      - name: Check Folder Content after folder is made
-        run: | 
-          ls
-          cd build
-          echo "we are inside Build Now"
-          ls
           
       - name: Moving translations
         run: |

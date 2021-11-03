@@ -45,13 +45,9 @@ jobs:
       - name: Setup Plugins Version and start compiling 
         run: |
           echo "Set plugins version",
-          for file in addons/sourcemod/scripting/hexvips.sp,
-          do,
-          sed -i "s/<TAG>/$TAG/g" $file > output.txt,
-          rm output.txt,
-          done,
-          addons/sourcemod/scripting/compile.sh hexvips.sp.
-          
+          chmod +x setup.sh
+          ./setup.sh
+            
       - name: Move plugins files to their folder
         run: |
          echo "Move plugins files to their folder",

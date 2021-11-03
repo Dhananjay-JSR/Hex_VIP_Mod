@@ -75,7 +75,7 @@ jobs:
       - name: GH Release
         uses: softprops/action-gh-release@v0.1.13
         with:
-          tag_name: ${{github.ref}}
+          tag_name: main
           files: HexVips.zip
        
        

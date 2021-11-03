@@ -68,6 +68,7 @@ jobs:
            ls build/addons/sourcemod/translations
             ls build/addons/sourcemod
             ls
+            echo "outside of CD"
             cd ..
             ls
             

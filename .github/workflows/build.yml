@@ -46,22 +46,22 @@ jobs:
       - name: Setup Plugins Version and start compiling 
         run: |
           chmod +x addons/sourcemod/scripting/spcomp
-          echo "Set plugins version",
+          echo "Set plugins version"
           chmod +x setup.sh
           ./setup.sh
             
       - name: Move plugins files to their folder
         run: |
          echo "Move plugins files to their folder",
-          mv addons/sourcemod/scripting/include/hexvips.inc build/addons/sourcemod/scripting/include,
-          mv addons/sourcemod/scripting/hexvips.sp build/addons/sourcemod/scripting,
-          mv addons/sourcemod/scripting/vipmenu.sp build/addons/sourcemod/scripting,
-          mv addons/sourcemod/scripting/compiled/hexvips.smx build/addons/sourcemod/plugins.
+          mv addons/sourcemod/scripting/include/hexvips.inc build/addons/sourcemod/scripting/include
+          mv addons/sourcemod/scripting/hexvips.sp build/addons/sourcemod/scripting
+          mv addons/sourcemod/scripting/vipmenu.sp build/addons/sourcemod/scripting
+          mv addons/sourcemod/scripting/compiled/hexvips.smx build/addons/sourcemod/plugins
           
       - name: Moving License and Compresssing License 
         run: |
          mv LICENSE build/
-         cd build/ && zip -9rq HexVips.zip addons/ LICENSE && mv HexVips.zip ../.
+         cd build/ && zip -9rq HexVips.zip addons/ LICENSE && mv HexVips.zip ../
        
       - name: Show Content
         run: |

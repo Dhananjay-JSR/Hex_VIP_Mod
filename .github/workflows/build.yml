@@ -51,6 +51,8 @@ jobs:
           
       - name: Moving translations
         run: |
+          echo "checking if folder exist or not when moving file"
+          ls
           mv addons/sourcemod/translations/* build/addons/sourcemod/translations/
         
       - name: Download SourceMod

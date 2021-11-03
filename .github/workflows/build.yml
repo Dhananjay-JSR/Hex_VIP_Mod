@@ -53,7 +53,7 @@ jobs:
         run: |
           echo "checking if folder exist or not when moving file"
           ls
-          mv addons/sourcemod/translations/* build/addons/sourcemod/translations/
+          mv addons/sourcemod/translations/* build/
         
       - name: Download SourceMod
         run: |

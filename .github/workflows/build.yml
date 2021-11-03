@@ -46,6 +46,7 @@ jobs:
         run: | 
           ls
           cd build
+          echo "we are inside Build Now"
           ls
           
       - name: Moving translations

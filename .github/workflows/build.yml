@@ -22,14 +22,14 @@ jobs:
 
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
-      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+      #  1) Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v2
 
-      # DEBUG
+      # 2) DEBUG
       - name: Check Folder Content
         run: ls
 
-      # Runs a set of commands using the runners shell
+      # 3 )Runs a set of commands using the runners shell
       
       - name: Create clean plugins folder
         run: |
@@ -41,12 +41,12 @@ jobs:
         run: ls
         
 
-      # DEBUG
-      - name: Check Folder Content
+      # 4 ) DEBUG
+      - name: Check Folder Content after folder is made
         run: | 
-          ls,
-          cd build,
-          ls.
+          ls
+          cd build
+          ls
           
       - name: Moving translations
         run: |

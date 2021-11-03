@@ -67,6 +67,9 @@ jobs:
         run: |
            ls build/addons/sourcemod/translations
             ls build/addons/sourcemod
+            ls
+            cd ..
+            ls
             
       - name: Build Done
         run: echo "Build done"

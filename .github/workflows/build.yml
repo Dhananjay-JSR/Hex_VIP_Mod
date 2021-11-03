@@ -72,6 +72,11 @@ jobs:
       - name: Build Done
         run: echo "Build done"
        
+      - name: GH Release
+        uses: softprops/action-gh-release@v0.1.13
+        with:
+          files: HexVips.zip
+       
        
          
      

@@ -301,6 +301,7 @@ void CheckTag(int client) //HANDLE TAG
 	if ((IsValidClient(client, false, true) && !StrEqual(sVipTag, "none", false)) && (bVip[client] && !(GetUserFlagBits(client) & ADMFLAG_ROOT)))
 	{
 		if (cv_bVipTag.BoolValue)
+		return;
 		else if (!cv_bVipTag.BoolValue)
 		{
 			char sOldTag[16];

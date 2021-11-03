@@ -31,14 +31,17 @@ jobs:
 
       # Runs a set of commands using the runners shell
       
-      - name: Run a multi-line script
+      - name: Create clean plugins folder
         run: |
-          echo "Create clean plugins folder",
           mkdir -p build/addons/sourcemod/scripting/include,
           mkdir -p build/addons/sourcemod/plugins,
-          mkdir -p build/addons/sourcemod/translations.
+          mkdir -p build/addons/sourcemod/translations,
+          ls.
+          
       - name: Moving translations
-        run: mv addons/sourcemod/translations/* build/addons/sourcemod/translations/
+        run: |
+          mv addons/sourcemod/translations/* build/addons/sourcemod/translations/,
+          ls.
         
       - name: Download SourceMod
         run: |
